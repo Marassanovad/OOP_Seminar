@@ -13,6 +13,5 @@ public interface AnimalActions extends Animal {
 
     void walk(String type);
 
-
     void play(String type);
 }

@@ -1,56 +1,52 @@
-
-
 package Seminar1;
 
-import java.util.ArrayList;
 import java.util.List;
 
 public class Parents extends Human {
-    private List<Human> child = new ArrayList<>();
-    public Parents(String firstName, String lastName, String gender, String birthDate, List<Human> child) {
-        super(firstName, lastName, gender, birthDate);
-        this.child = child;
-    }
-    public Parents(String firstName, String lastName, String gender, String birthDate) {
-        super(firstName, lastName, gender, birthDate);
+    private Integer motherId;
+    private Integer fatherId;
+//    private List<Human> geoTree;
+
+
+    public Parents(String firstName, String lastName, String gender, String birthDate, Integer id, Integer motherId, Integer fatherId) {
+        super(firstName, lastName, gender, birthDate, id);
+        this.motherId = motherId;
+        this.fatherId = fatherId;
     }
 
-    public Parents(List<Human> child) {
+    public Parents(String firstName, String lastName, String gender, String birthDate, Integer id) {
+        super(firstName, lastName, gender, birthDate, id);
+    }
+
+    public Parents(Integer motherId, Integer fatherId) {
         super();
-        this.child = child;
+        this.motherId = motherId;
+        this.fatherId = fatherId;
+
     }
 
-    public List<Human> getChild() {
-        return child;
+    public Integer getMotherId() {
+        return motherId;
     }
 
-    public void setChild(List<Human> child) {
-        this.child = child;
-    }
-    
-    public void addChild(Human human){
-        child.add(human);
-    }
-    
-    public void addChild(String firstName, String lastName, String gender, String birthDate) {
-        addChild(new Human(firstName, lastName, gender, birthDate));
+    public void setMotherId(Integer motherId) {
+        this.motherId = motherId;
     }
 
-    @Override
-    public String toString() {
-        if (getGender().equals("W")){
-            return "Mother:" + super.toString()+ "\n"+
-                    "her children: " + child;
-        }else{
-            return "Father:" + super.toString()+ "\n"+
-                    "his children: " + child;
-        }
+    public Integer getFatherId() {
+        return fatherId;
     }
 
-    public int countChild(){
-        int count = child.size();
-        return count;
+    public void setFatherId(Integer fatherId) {
+        this.fatherId = fatherId;
     }
-    
-    
+
+
+    public String toString(List<Human> geoTree) {
+        return super.toString() + "\n" +
+                "Mother: " + geoTree.get(motherId) + "\n" +
+                "Father: " + geoTree.get(fatherId);
+    }
+
+
 }

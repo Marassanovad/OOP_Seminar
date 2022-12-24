@@ -13,25 +13,29 @@ public class Actions {
         return geoTree;
     }
 
+
+
     public void setGeoTree(List<Human> geoTree) {
         this.geoTree = geoTree;
     }
 
     public void addGeoTree(Human human) {
-        geoTree.add(human);
+        if (human == null){
+            return;
+        }else {
+            geoTree.add(human);
+        }
     }
 
-    public void addGeoTree(String firstName, String lastName, String gender, String birthDate){
-        addGeoTree(new Human(firstName,lastName,gender,birthDate));
+    public void addGeoTree(String firstName, String lastName, String gender, String birthDate, Integer id){
+        addGeoTree(new Human(firstName,lastName,gender,birthDate, id));
     }
 
-    public List<Human> getHumanByGender(String gender){
-        List<Human> gen = new ArrayList<>();
+    public void getHumanByGender(String gender){
         for (Human human: geoTree) {
             if (human.getGender().equals(gender)){
-                gen.add(human);
+                System.out.println(human);
             }
         }
-        return gen;
     }
 }
