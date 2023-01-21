@@ -12,7 +12,7 @@ import java.util.logging.Logger;
 
 public class logger {
 
-    public void logger(String text) {
+    public void logger(String text) { // логгер для всех действий
         try (FileWriter writer = new FileWriter("logger.txt", true)) {
             // запись всей строки
             Calendar calendar = new GregorianCalendar();
@@ -25,7 +25,7 @@ public class logger {
         }
     }
 
-    public void start(int i) {
+    public void start(int i) { // логгер для старта, завершение и ломки ошибки
         try (FileWriter writer = new FileWriter("logger.txt", true)) {
             // запись всей строки
             Calendar calendar = new GregorianCalendar();

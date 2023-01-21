@@ -1,8 +1,6 @@
 package Seminar_5.Complex;
 
-import Seminar_5.Complex.Compl;
-
-public class ComplAction implements Compl {
+public class ComplAction implements I_Compl {
     @Override
     public Number getNum1Part1() {
         return null;

@@ -2,10 +2,10 @@ package Seminar_5.Rational;
 
 import Seminar_5.Excep;
 import Seminar_5.logger;
-
 import java.util.Scanner;
 
-public class RationAction implements Ration {
+
+public class RationAction implements I_Ration {
     Scanner in = new Scanner(System.in);
     Excep ex = new Excep();
     logger logg = new logger();

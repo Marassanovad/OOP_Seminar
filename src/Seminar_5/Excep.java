@@ -11,8 +11,7 @@ public class Excep {
     Scanner in = new Scanner(System.in);
     logger logg = new logger();
 
-
-    String action() { // проверка на знак
+    public String action() { // проверка на знак
         List<String> ls = new ArrayList<>(Arrays.asList("+", "-", "*", "/", "5"));
 //        System.out.println("Введи действие: ");
         String i;
@@ -49,7 +48,7 @@ public class Excep {
         return num;
     }
 
-    public double getDouble() { //проверка на число
+    public double getDouble() { //проверка на дробное число
         System.out.println("Введите число:");
         double num;
         if (in.hasNextDouble()) {
